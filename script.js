@@ -8,3 +8,15 @@ const model = new OpenAI({
     model: 'gpt-3.5-turbo'
   });
   
+  const promptFunc = async () => {
+
+    try {
+      const res = await model.call("How do you capitalize all characters of a string in JavaScript?");
+      console.log(res);
+    }
+    catch (err) {
+      console.log(err);
+    }
+  };
+  
+  promptFunc();
